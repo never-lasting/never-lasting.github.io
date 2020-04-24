@@ -96,4 +96,4 @@ public class DriverManager {
 
 你会发现去掉第一步的加载驱动Class.forName(...), 代码似乎依旧正常, 并不会获取不到连接!!! why???
 
-see [service provider interface](./spi/jdk1.6 spi)
+see [service provider interface](../spi/jdk1.6 spi)
