@@ -8,14 +8,8 @@
 
 ### jdbc
 
-[why Class.forName(...)](./jdk/jdbc/why Class.forName(...)) 
+[why Class.forName(...)](./jdk/jdbc/why Class.forName)
 
 ### spi
 [jdk1.6 spi](./jdk/spi/jdk1.6 spi)
-
-
-
-
-
-
 
