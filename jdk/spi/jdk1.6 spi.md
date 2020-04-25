@@ -6,18 +6,59 @@
 
 jdk1.6提供了这样的机制, 解耦模块之间的依赖, 使我们的模块变得可插拔.
 
+![java SPI机制](images/spi-1.png)
+
 ## ServiceLoader
 
 jdk1.6 提供了java.util.ServiceLoader让我们使用spi机制
 
-![java SPI机制](images/spi-1.png)
+### 使用规则 & 源码分析
+
+#### 使用规则
+
+1. 定义标准服务接口, 或者使用jdk或者第三方提供的
+2. 提供标准服务接口的实现类, 实现类必须有无参构造器
+3. classpath下META-INF/services提供配置文件,文件名为接口的全限定名,文件内容为实现类的全限定名,文件编码必须是UTF-8
+
+#### demo
+
+![示例机构](images/spi-2.png)
+
+```java
+public interface ServiceInterface {
+    void doService();
+}
+
+public class StandardService implements ServiceInterface {
+    @Override
+    public void doService() {
+        System.out.println("StandardService deService()...");
+    }
+}
+public class ServiceLoaderTest {
+
+    public static void main(String[] args) {
+        // ServiceLoader.load这一步并不会加载服务实现类
+        ServiceLoader<ServiceInterface> serviceLoader = ServiceLoader.load(ServiceInterface.class);
+        // 只有在迭代的时候才会加载并实例化服务
+        for (ServiceInterface service : serviceLoader) {
+            service.doService();
+        }
+    }
+}
+
+// content of file(com.johnny.spi.service.ServiceInterface)
+com.johnny.spi.service.impl.StandardService
+```
 
 
+
+#### ServiceLoader源码分析
 
 成员变量
 
 ```java
-    // location prefix of the Service config
+    // location prefix of the provider-configuration file
     private static final String PREFIX = "META-INF/services/";
     // The class or interface representing the service being loaded
     private final Class<S> service;
@@ -54,4 +95,6 @@ jdk1.6 提供了java.util.ServiceLoader让我们使用spi机制
         lookupIterator = new LazyIterator(service, loader);
     }
 ```
+
+Providers are located and instantiated lazily .`ServiceLoader.load(Class service)`还不会去加载服务
 
