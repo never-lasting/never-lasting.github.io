@@ -82,9 +82,28 @@
 /************************ main style ****************************/
 div.searchbox {
 	margin-top: 10px;
+	margin-bottom: 30px;
 }
 @media (min-width: 992px) {
 	div.searchbox {
 		margin-top: 80px;
+		float: right;
 	}
+	section.page-header h1 {
+		font-size: 52px;
+	}
+}
+
+section.page-header {
+    color: #fff;
+    text-align: center;
+    background-color: #159957;
+    background-image: linear-gradient(120deg, #155799, #159957);
+	margin-top: 0px;
+	margin-bottom: 10px;
+	padding: 10px;
+}
+
+section.page-header h1 {
+	margin-top: 0px;
 }
