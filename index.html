@@ -16,34 +16,36 @@
 	</head>
 	<body>
 		<section class="page-header">
-		  <!-- <h1 class="project-name">never-lasting.github.io</h1> -->
-		  <h2 class="project-tagline">never-lasting的个人博客</h2>
+			<h2><span id="zen" class="glyphicon glyphicon-menu-hamburger" aria-hidden="true" style="float: left;font-size: 28px;cursor: pointer;"></span></h2>
+		    <!-- <h1 class="project-name">never-lasting.github.io</h1> -->
+		    <h2 class="project-tagline">never-lasting的个人博客</h2>
 		</section>
 		<section class="page-content">
 		<div class="container-fluid">
 			<div class = "row">
-				<div class="col-md-3 col-xs-12">
+				<div class="col-md-3 col-xs-12" id="leftDiv">
 					<div class="searchbox" id="search_div">
 						<div>
 							  <div class="form-group">
 								<!-- <label for="searchContent">search</label> -->
 								<!-- <input type="hidden" id="" name="hidden_input" /> -->
-								<input type="email" class="form-control" id="searchContent" placeholder="search content">
+								<input type="email" class="form-control" id="searchContent" placeholder="search title">
 							  </div>
 							  <div>
 								  <ul>
 									  <li>input blog title and press enter to search</li>
 									  <li>case insensive</li>
+									  <li>press shift + F11 into zen mode</li>
 								  </ul>
 							  </div>
 						</div>
 					</div>
-					<div class="tree-div">
+					<div id="tree_div" class="tree-div">
 						<ul id="treeDemo" class="ztree"></ul>
 					</div>
 				</div>
 				
-				<div class="col-md-9 col-xs-12">
+				<div class="col-md-9 col-xs-12" id="rightDiv">
 					<iframe id="blog-content" frameBorder="0" width="100%" src="algorithm/[HashMap] why capacity must be a power of two"></iframe>
 				</div>
 			</div>

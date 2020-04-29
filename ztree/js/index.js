@@ -81,7 +81,24 @@ $(document).ready(function() {
 		return node.name.toUpperCase().indexOf(searchContent.toUpperCase()) == -1;
 	}
 
+	var zenOn = false;
+	
+	// $('#zen').click(function(){
+	// 	toggleZen(zenOn);
+	// });
 
-
-
+	// function toggleZen(zen){
+	// 	if(zen){
+	// 		$('#leftDiv').show();
+	// 		$('#rightDiv').removeClass('col-md-12').addClass('col-md-9');
+	// 		$('div.container').removeClass('container').addClass('container-fluid');
+	// 		zenOn = false;
+	// 	} else {
+	// 		$('#leftDiv').hide();
+	// 		$('#rightDiv').removeClass('col-md-9').addClass('col-md-12');
+	// 		$('#blog-content').height('10000px');
+	// 		$('div.container-fluid').removeClass('container-fluid').addClass('container');
+	// 		zenOn = true;
+	// 	}
+	// }
 })
