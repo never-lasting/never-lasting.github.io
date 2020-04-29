@@ -14,35 +14,6 @@ var nodes =
 	{name:"spi", children:[
 		{name:"jdk1.6 spi", blogUrl:basePath + "jdk/spi/jdk1.6 spi", tags:["spi", "service loader"]},
 		{name:"spi in jdk", blogUrl:basePath + "jdk/spi/spi in jdk",tags:["spi"]}
-	]},
-	{name:"spi", children:[
-		{name:"jdk1.6 spi", blogUrl:basePath + "jdk/spi/jdk1.6 spi", tags:["spi", "service loader"]},
-		{name:"spi in jdk", blogUrl:basePath + "jdk/spi/spi in jdk",tags:["spi"]}
-	]},
-	{name:"spi", children:[
-		{name:"jdk1.6 spi", blogUrl:basePath + "jdk/spi/jdk1.6 spi", tags:["spi", "service loader"]},
-		{name:"spi in jdk", blogUrl:basePath + "jdk/spi/spi in jdk",tags:["spi"]}
-	]},
-	{name:"spi", children:[
-		{name:"jdk1.6 spi", blogUrl:basePath + "jdk/spi/jdk1.6 spi", tags:["spi", "service loader"]},
-		{name:"spi in jdk", blogUrl:basePath + "jdk/spi/spi in jdk",tags:["spi"]}
-	]},
-	{name:"spi", children:[
-		{name:"jdk1.6 spi", blogUrl:basePath + "jdk/spi/jdk1.6 spi", tags:["spi", "service loader"]},
-		{name:"spi in jdk", blogUrl:basePath + "jdk/spi/spi in jdk",tags:["spi"]}
-	]},
-	{name:"spi", children:[
-		{name:"jdk1.6 spi", blogUrl:basePath + "jdk/spi/jdk1.6 spi", tags:["spi", "service loader"]},
-		{name:"spi in jdk", blogUrl:basePath + "jdk/spi/spi in jdk",tags:["spi"]}
-	]},
-	{name:"spi", children:[
-		{name:"jdk1.6 spi", blogUrl:basePath + "jdk/spi/jdk1.6 spi", tags:["spi", "service loader"]},
-		{name:"spi in jdk", blogUrl:basePath + "jdk/spi/spi in jdk",tags:["spi"]}
-	]},
-	{name:"spi", children:[
-		{name:"jdk1.6 spi", blogUrl:basePath + "jdk/spi/jdk1.6 spi", tags:["spi", "service loader"]},
-		{name:"spi in jdk", blogUrl:basePath + "jdk/spi/spi in jdk",tags:["spi"]}
 	]}
-
 	
 ];
