@@ -1,80 +1,50 @@
 /**************** ztree css ********************************/
 
-/* 取消选中的特效 */
+/* 选中特效 */
 .ztree li a.curSelectedNode {
-	background-color: rgba(0, 0, 0, 0);
-	border: 0px white;
+    padding-top: 0px;
+    background-color: white;
+    height: 16px;
+    border: 0;
+    opacity: 1;
+	color: skyblue;
+	text-decoration:underline;
+}
+.ztree li a.leaf {
+	font-size: 18px;
+	color: #155799;
+}
+.ztree li a.curSelectedNode.leaf {
+	color: skyblue;
 }
 
 .ztree li span.button.switch {
 	display: none;
 }
+.ztree {
+	padding-top: 20px;
+}
 
 /**** hover begin ****/
 .ztree li a:hover {
-    text-decoration: none;
-    text-decoration-line: none;
+    text-decoration: underline;
+    /* text-decoration-line: none; */
     text-decoration-style: initial;
     text-decoration-color: initial;
 }
-.ztree li a[href]:hover {
-    text-decoration: underline;
-    text-decoration-line: underline;
-    text-decoration-style: initial;
-    text-decoration-color: blue;
-}
 /**** hover end ****/
+.ztree li a.node {
+	margin: 4px;
+}
 
 .ztree li a.level0 {
 	font-weight: 700;
-	height: 32px;
-	margin: 4px 0px 8px 4px;
+	margin: 4px 0px 6px 4px;
 	color: #159957;
-}
-.ztree li a.level0 span.node_name {
-	font-size: 32px;
-}
-.ztree li a.level1 {
-	font-weight: 620;
-	font-size: 24px;
-	height: 26px;
-	margin: 4px;
-}
-.ztree li a.level1 span.node_name {
-	font-size: 26px;
-}
-.ztree li a.level2 {
-	font-weight: 580;
-	font-size: 22px;
-	height: 22px;
-	margin: 2px;
-}
-.ztree li a.level2 span.node_name {
-}
-.ztree li a.level3 {
-	font-weight: 580;
-	font-size: 22px;
-	height: 22px;
-	margin: 2px;
-}
-.ztree li a.level3 span.node_name {
-	font-size: 18px;
-}
-
-
-.ztree li a[href] {
-	font-weight: 400;
-	font-size: 20px;
-	margin: 2px;
-}
-.ztree li a[href] span.node_name {
-	font-weight: 400;
-	font-size: 20px;
-	color: #316AC5;
 }
 
 .ztree li.level0 {
-	margin: 16px;
+	margin: 2px;
 }
 
 /**************** ztree css ********************************/
@@ -82,15 +52,18 @@
 /************************ main style ****************************/
 div.searchbox {
 	margin-top: 10px;
-	margin-bottom: 30px;
+	margin-bottom: 5px;
 }
+
 @media (min-width: 992px) {
-	div.searchbox {
-		margin-top: 80px;
-		float: right;
-	}
 	section.page-header h1 {
 		font-size: 52px;
+	}
+	div.container-fluid {
+		padding-right: 15px;
+		padding-left: 45px;
+		margin-right: auto;
+		margin-left: auto;
 	}
 }
 
@@ -100,10 +73,17 @@ section.page-header {
     background-color: #159957;
     background-image: linear-gradient(120deg, #155799, #159957);
 	margin-top: 0px;
-	margin-bottom: 10px;
+	margin-bottom: 0px;
 	padding: 10px;
 }
 
 section.page-header h1 {
 	margin-top: 0px;
+}
+
+html, body {
+	height: 100%;
+}
+div.tree-div {
+	overflow-y: auto;
 }

@@ -19,36 +19,37 @@
 		  <h1 class="project-name">never-lasting.github.io</h1>
 		  <h2 class="project-tagline">never-lasting的个人博客</h2>
 		</section>
-		<div class="container">
+		<section class="page-content">
+		<div class="container-fluid">
 			<div class = "row">
-				<div class="col-md-3 searchbox" id="search_div">
-					<div>
-						  <div class="form-group">
-							<label for="searchContent">search</label>
-							<!-- <input type="hidden" id="" name="hidden_input" /> -->
-							<input type="email" class="form-control" id="searchContent" placeholder="search content">
-						  </div>
-						  <div>
-							  <ul>
-								  <li>input blog title and press enter to search</li>
-								  <li>case insensive</li>
-							  </ul>
-						  </div>
-<!-- 						  <div class="form-group">
-							<label for="tagSelect">标签</label>
-							<select type="password" id="tagSelect" class="form-control">
-								<option value="">===感兴趣的标签===</option>
-								<option>jvm</option>
-								<option>algorithm</option>
-							</select>
-						  </div> -->
+				<div class="col-md-3 col-xs-12">
+					<div class="searchbox" id="search_div">
+						<div>
+							  <div class="form-group">
+								<!-- <label for="searchContent">search</label> -->
+								<!-- <input type="hidden" id="" name="hidden_input" /> -->
+								<input type="email" class="form-control" id="searchContent" placeholder="search content">
+							  </div>
+							  <div>
+								  <ul>
+									  <li>input blog title and press enter to search</li>
+									  <li>case insensive</li>
+								  </ul>
+							  </div>
+						</div>
+					</div>
+					<div class="tree-div">
+						<ul id="treeDemo" class="ztree"></ul>
 					</div>
 				</div>
-				<div class="col-md-9 col-sm-12">
-					<ul id="treeDemo" class="ztree"></ul>
+				
+				<div class="col-md-9 col-xs-12">
+					<iframe id="blog-content" width="100%" src="algorithm/[HashMap] why capacity must be a power of two"></iframe>
 				</div>
 			</div>
-		   
+			
+			
 		</div>
+		</section>
 	</body>
 </html>
