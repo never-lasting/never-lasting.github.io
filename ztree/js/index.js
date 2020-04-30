@@ -15,8 +15,12 @@ function toogleMenu(){
 
 // 去除模板生成的头部
 function onBlogLoad() {
-	var iframeDoc = document.querySelector('#blog-content').contentWindow.document;
+	var iframeWindow = document.querySelector('#blog-content').contentWindow;
+	var iframeDoc = iframeWindow.document;
 	iframeDoc.querySelector('section.page-header').remove();
+	
+	//
+	console.log(iframeWindow.location.pathname);
 	
 	
 	// 子页面事件反应到主页面
@@ -34,6 +38,7 @@ function onBlogLoad() {
 			toogleMenu();
 		}
 	});
+	
 }
 
 var currentNodeLeaf;
