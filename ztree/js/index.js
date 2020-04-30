@@ -20,15 +20,16 @@ function onBlogLoad() {
 	iframeDoc.querySelector('section.page-header').remove();
 	
 	
-	var node = zTreeObj.getNodesByFilter(function(node){
+	var selectedNode = zTreeObj.getNodesByFilter(function(node){
 		if (node.blogUrl) {
 			return node.blogUrl == "../.." + encodeURI(iframeWindow.location.pathname);
 		}
 		return false;
 	}, true);
 	
-	if(node) {
-		zTreeObj.selectNode(node);
+	if(selectedNode) {
+		zTreeObj.selectNode(selectedNode);
+		currentNodeLeaf = selectedNode;
 	}
 	
 	
