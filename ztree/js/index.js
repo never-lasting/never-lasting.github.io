@@ -59,7 +59,7 @@ var setting = {
 				$('#blog-content').hide();
 				$('#blog-content').attr('src', treeNode.blogUrl);
 				setTimeout(function () {
-				  $("divid").show();
+				  $("#blog-content").show();
 				 }, 500);
 				
 			}
