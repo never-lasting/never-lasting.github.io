@@ -19,8 +19,17 @@ function onBlogLoad() {
 	var iframeDoc = iframeWindow.document;
 	iframeDoc.querySelector('section.page-header').remove();
 	
-	//
-	console.log(iframeWindow.location.pathname);
+	
+	var node = zTreeObj.getNodesByFilter(function(node){
+		if (node.blogUrl) {
+			return node.blogUrl == "../.." + encodeURI(iframeWindow.location.pathname);
+		}
+		return false;
+	}, true);
+	
+	if(node) {
+		zTreeObj.selectNode(node);
+	}
 	
 	
 	// 子页面事件反应到主页面
