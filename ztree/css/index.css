@@ -18,6 +18,7 @@
 	color: skyblue;
 }
 
+/* 不显示按钮 */
 .ztree li span.button.switch {
 	display: none;
 }
@@ -45,6 +46,10 @@
 
 .ztree li.level0 {
 	margin: 2px;
+}
+
+ul.ztree li {
+	margin: 3px;
 }
 
 /**************** ztree css ********************************/
@@ -90,7 +95,8 @@ div.tree-div {
 }
 
 #tree_div {
-border-right: 1px solid #ebf2f2
+	/* border-right: 1px solid #ebf2f2; */
+	border-right: 1px solid #c7cccc;
 }
 
 

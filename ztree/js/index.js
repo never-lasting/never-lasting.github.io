@@ -1,3 +1,8 @@
+function onBlogLoad(){
+	document.querySelector('#blog-content').contentWindow.document.querySelector('section.page-header').innerHTML = "";
+}
+
+
 var zTreeObj;
 // zTree 的参数配置，深入使用请参考 API 文档（setting 配置详解）
 var setting = {
@@ -44,7 +49,7 @@ $(document).ready(function() {
 		if (!$($nodes[i]).next().length) {
 			$($nodes[i]).addClass('leaf')
 		} else {
-			$($nodes[i]).css({"font-size":"24px", "font-weight": "580"});
+			$($nodes[i]).css({"font-size":"22px", "font-weight": "580"});
 		}
 	}
 
@@ -101,4 +106,5 @@ $(document).ready(function() {
 	// 		zenOn = true;
 	// 	}
 	// }
+	
 })
