@@ -36,7 +36,7 @@ function onBlogLoad() {
 	});
 }
 
-
+var currentNodeLeaf;
 var zTreeObj;
 // zTree 的参数配置，深入使用请参考 API 文档（setting 配置详解）
 var setting = {
@@ -47,15 +47,20 @@ var setting = {
 		selectedMulti: false,
 		dblClickExpand: false,
 		target: '_self',
+		txtSelectedEnable: true,
 		nodeClasses: {
 			add: ['node']
 		}
 	},
 	callback: {
 		onClick: function(event, treeId, treeNode, clickFlag) {
+			if (treeNode == currentNodeLeaf) {
+				return;
+			}
 			if (treeNode.isParent) {
 				zTreeObj.expandNode(treeNode, !treeNode.open, false, true);
 			} else {
+				currentNodeLeaf = treeNode;
 				$('#blog-content').hide();
 				$('#blog-content').attr('src', treeNode.blogUrl);
 				setTimeout(function () {
