@@ -1,3 +1,4 @@
+// 去除模板生成的头部
 function onBlogLoad(){
 	document.querySelector('#blog-content').contentWindow.document.querySelector('section.page-header').remove();
 }
