@@ -1,5 +1,5 @@
 function onBlogLoad(){
-	document.querySelector('#blog-content').contentWindow.document.querySelector('section.page-header').innerHTML = "";
+	document.querySelector('#blog-content').contentWindow.document.querySelector('section.page-header').remove();
 }
 
 
