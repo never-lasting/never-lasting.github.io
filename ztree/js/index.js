@@ -56,9 +56,13 @@ var setting = {
 			if (treeNode.isParent) {
 				zTreeObj.expandNode(treeNode, !treeNode.open, false, true);
 			} else {
+				$('#blog-content').hide();
 				$('#blog-content').attr('src', treeNode.blogUrl);
+				setTimeout(function () {
+				  $("divid").show();
+				 }, 500);
+				
 			}
-
 
 		}
 	}
