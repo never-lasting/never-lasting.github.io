@@ -2,6 +2,17 @@
 var isAltDown = false;
 var menuExpanded = true;
 
+// expande/collapse
+function toogleMenu(){
+	if (menuExpanded) {
+		zTreeObj.expandAll(false);
+		menuExpanded = false;
+	} else {
+		zTreeObj.expandAll(true);
+		menuExpanded = true;
+	}
+}
+
 // 去除模板生成的头部
 function onBlogLoad() {
 	var iframeDoc = document.querySelector('#blog-content').contentWindow.document;
@@ -148,15 +159,4 @@ $(document).ready(function() {
 		}
 	});
 	
-	// expande/collapse
-	function toogleMenu(){
-		if (menuExpanded) {
-			zTreeObj.expandAll(false);
-			menuExpanded = false;
-		} else {
-			zTreeObj.expandAll(true);
-			menuExpanded = true;
-		}
-	}
-
 })
