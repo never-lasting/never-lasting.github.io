@@ -22,7 +22,7 @@ function onBlogLoad() {
 	
 	var selectedNode = zTreeObj.getNodesByFilter(function(node){
 		if (node.blogUrl) {
-			return node.blogUrl == "../.." + encodeURI(iframeWindow.location.pathname);
+			return node.blogUrl == "../.." + decodeURI(iframeWindow.location.pathname);
 		}
 		return false;
 	}, true);
