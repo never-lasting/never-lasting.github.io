@@ -1,6 +1,28 @@
+// alt 18    q  81
+var isAltDown = false;
+var menuExpanded = true;
+
 // 去除模板生成的头部
-function onBlogLoad(){
-	document.querySelector('#blog-content').contentWindow.document.querySelector('section.page-header').remove();
+function onBlogLoad() {
+	var iframeDoc = document.querySelector('#blog-content').contentWindow.document;
+	iframeDoc.querySelector('section.page-header').remove();
+	
+	
+	// 子页面事件反应到主页面
+	$(iframeDoc).keyup(function(e) {
+		if (e.keyCode == 18) {
+			isAlt = false;
+		}
+	});
+	$(iframeDoc).keydown(function(e) {
+		if (e.keyCode == 18) {
+			isAlt = true;
+			return;
+		}
+		if(e.keyCode == 81 && isAlt) {
+			toogleMenu();
+		}
+	});
 }
 
 
@@ -50,7 +72,10 @@ $(document).ready(function() {
 		if (!$($nodes[i]).next().length) {
 			$($nodes[i]).addClass('leaf')
 		} else {
-			$($nodes[i]).css({"font-size":"22px", "font-weight": "580"});
+			$($nodes[i]).css({
+				"font-size": "22px",
+				"font-weight": "580"
+			});
 		}
 	}
 
@@ -88,7 +113,7 @@ $(document).ready(function() {
 	}
 
 	var zenOn = false;
-	
+
 	// $('#zen').click(function(){
 	// 	toggleZen(zenOn);
 	// });
@@ -107,5 +132,31 @@ $(document).ready(function() {
 	// 		zenOn = true;
 	// 	}
 	// }
+	$(document).keyup(function(e) {
+		if (e.keyCode == 18) {
+			isAlt = false;
+		}
+	});
+
+	$(document).keydown(function(e) {
+		if (e.keyCode == 18) {
+			isAlt = true;
+			return;
+		}
+		if(e.keyCode == 81 && isAlt) {
+			toogleMenu();
+		}
+	});
 	
+	// expande/collapse
+	function toogleMenu(){
+		if (menuExpanded) {
+			zTreeObj.expandAll(false);
+			menuExpanded = false;
+		} else {
+			zTreeObj.expandAll(true);
+			menuExpanded = true;
+		}
+	}
+
 })
