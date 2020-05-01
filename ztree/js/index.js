@@ -95,6 +95,7 @@ $(document).ready(function() {
 	// fix height
 	$('.tree-div').height($('body').height() - $('section.page-header').innerHeight() - $('.searchbox').outerHeight(true) -
 		15);
+	$('#rightDiv').height($('body').height() - $('section.page-header').innerHeight() - 5)
 	$('#blog-content').height($('body').height() - $('section.page-header').innerHeight() - 15)
 
 	zTreeObj = $.fn.zTree.init($('#treeDemo'), setting, nodes);
