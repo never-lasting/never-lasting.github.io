@@ -1,6 +1,7 @@
 // alt 18    q  81
 var isAltDown = false;
 var menuExpanded = true;
+var currentNodeLeaf;
 
 // expande/collapse
 function toogleMenu(){
@@ -17,19 +18,24 @@ function toogleMenu(){
 function onBlogLoad() {
 	var iframeWindow = document.querySelector('#blog-content').contentWindow;
 	var iframeDoc = iframeWindow.document;
-	iframeDoc.querySelector('section.page-header').remove();
 	
-	
-	var selectedNode = zTreeObj.getNodesByFilter(function(node){
-		if (node.blogUrl) {
-			return node.blogUrl == "../.." + decodeURI(iframeWindow.location.pathname);
+	if(window.location.origin.indexOf(iframeWindow.location.origin) > -1) {
+		iframeDoc.querySelector('section.page-header').remove();
+		
+		
+		var selectedNode = zTreeObj.getNodesByFilter(function(node){
+			if (node.blogUrl) {
+				return node.blogUrl == "../.." + decodeURI(iframeWindow.location.pathname);
+			}
+			return false;
+		}, true);
+		
+		if(selectedNode) {
+			zTreeObj.selectNode(selectedNode);
+			currentNodeLeaf = selectedNode;
 		}
-		return false;
-	}, true);
-	
-	if(selectedNode) {
-		zTreeObj.selectNode(selectedNode);
-		currentNodeLeaf = selectedNode;
+	} else {
+		currentNodeLeaf = null;
 	}
 	
 	
@@ -51,7 +57,6 @@ function onBlogLoad() {
 	
 }
 
-var currentNodeLeaf;
 var zTreeObj;
 // zTree 的参数配置，深入使用请参考 API 文档（setting 配置详解）
 var setting = {

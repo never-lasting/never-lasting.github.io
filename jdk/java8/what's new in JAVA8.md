@@ -5,8 +5,8 @@
 本文只涉及重要的使用较多的JAVA8新特性, 更详细的信息请访问:[oracle官网JAVA8新特性](https://www.oracle.com/java/technologies/javase/8-whats-new.html)
 
 - <a href="#Default Methods">Default  Methods 接口增强</a>
-- <a href="Repeating Annotations">Repeating Annotations可重复注解</a>
-- <a href="Lambda Expression">Lambda Expression</a>
+- <a href="#Repeating Annotations">Repeating Annotations可重复注解</a>
+- <a href="#Lambda Expression">Lambda Expression</a>
 
 
 
