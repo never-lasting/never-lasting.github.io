@@ -7,6 +7,7 @@
 - <a href="#Default Methods">Default  Methods 接口增强</a>
 - <a href="#Repeating Annotations">Repeating Annotations可重复注解</a>
 - <a href="#Lambda Expression">Lambda Expression</a>
+- <a href="#Stream API">Stream API</a>
 
 
 
@@ -93,7 +94,7 @@ public class RepeatableAnnotationTest {
         }
     }
 }
-// 必须额外定义一个注解
+// 必须定义一个包含想要多次使用注解的 容器注解
 @Target(ElementType.TYPE)
 @Retention(RetentionPolicy.RUNTIME)
 @interface Roles {
@@ -157,3 +158,7 @@ public class RepeatableAnnotationTest {
 ## <a name="Lambda Expression">Lambda Expression</a>
 
 Lambda表达式是JAVA8最重要的语法特性 , 直接单独开一篇[Lambda Expression](./Lambda Expression)
+
+## <a name="Stream API">Stream API</a>
+
+Stream API是JAVA8最重要的语法特性 , 直接单独开一篇[Stream API](./Stream API)
