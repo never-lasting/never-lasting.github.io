@@ -17,9 +17,10 @@ function toogleMenu(){
 // 去除模板生成的头部
 function onBlogLoad() {
 	var iframeWindow = document.querySelector('#blog-content').contentWindow;
-	var iframeDoc = iframeWindow.document;
 	
-	if(window.location.origin.indexOf(iframeWindow.location.origin) > -1) {
+	// 同源的连接, 左侧导航栏对应选中
+	try{
+		var iframeDoc = iframeWindow.document;
 		iframeDoc.querySelector('section.page-header').remove();
 		
 		
@@ -34,18 +35,19 @@ function onBlogLoad() {
 			zTreeObj.selectNode(selectedNode);
 			currentNodeLeaf = selectedNode;
 		}
-	} else {
+		
+	}catch(e){
 		currentNodeLeaf = null;
 	}
 	
 	
 	// 子页面事件反应到主页面
-	$(iframeDoc).keyup(function(e) {
+	$(iframeWindow).keyup(function(e) {
 		if (e.keyCode == 18) {
 			isAlt = false;
 		}
 	});
-	$(iframeDoc).keydown(function(e) {
+	$(iframeWindow).keydown(function(e) {
 		if (e.keyCode == 18) {
 			isAlt = true;
 			return;
