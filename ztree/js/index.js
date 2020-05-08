@@ -81,6 +81,10 @@ var setting = {
 			}
 			if (treeNode.isParent) {
 				zTreeObj.expandNode(treeNode, !treeNode.open, false, true);
+				zTreeObj.cancelSelectedNode(treeNode);
+				if(currentNodeLeaf){
+					zTreeObj.selectedNode(currentNodeLeaf, false, true);
+				}
 			} else {
 				currentNodeLeaf = treeNode;
 				$('#blog-content').hide();
