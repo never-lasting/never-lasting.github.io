@@ -2,7 +2,7 @@
 
 [Oracle官方文档]( https://docs.oracle.com/javase/tutorial/java/javaOO/lambdaexpressions.html )
 
-> JAVA语言在JAVA8之前一直被人诟病不支持***函数式编程***, 无法将方法当作参数传给另一个方法使用, 匿名内部类的使用看起来很不优雅. JAVA8新特性Lambda Expression解决了上述问题, 他支持将功能视为方法参数, 将代码视为数据.
+> JAVA语言在JAVA8之前一直被人诟病不支持***函数式编程***, 无法将方法当作参数传给另一个方法使用, 匿名内部类的使用看起来很不优雅. JAVA8新特性Lambda Expression解决了上述问题, **他支持将功能视为方法参数, 将代码视为数据**.
 
 ## Functional Interface
 
