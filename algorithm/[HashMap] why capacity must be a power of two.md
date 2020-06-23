@@ -1,6 +1,6 @@
 # Why capacity must be a power of two?
 
-HashMap的由数组+链表(或者红黑树)的形式实现的, capacity虽然不是HashMap中的成员变量, 但是却是一个非常重要的概念. capacity代表的bucket的数量(数组的长度).
+HashMap底层是由数组+链表(或者红黑树)的形式实现的, capacity虽然不是HashMap中的成员变量, 但是却是一个非常重要的概念. capacity代表的bucket的数量(数组的长度).
 
 ```java
     /**
