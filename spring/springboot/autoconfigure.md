@@ -55,7 +55,7 @@ public @interface EnableWebMvc {
 
 与`@Bean`一起使用可以决定这个Bean定义是否有效
 
-autoconfiguare中最常见的就是`@ConditionalOnClas`, `@ConditionalOnMissingBean`, 这些注解会关联对应的Condition接口的实现, 用于判断该配置是否生效.比如:
+autoconfiguare中最常见的就是`@ConditionalOnClass`, `@ConditionalOnMissingBean`, 这些注解会关联对应的Condition接口的实现, 用于判断该配置是否生效.比如:
 
 `@ConditionalOnClas` ---- `OnClassCondition`    classpath下存在指定class才生效
 
