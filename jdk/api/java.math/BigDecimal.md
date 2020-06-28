@@ -257,5 +257,4 @@ BigDecimal c = new BigDecimal("1.21");
 BigDecimal d = new BigDecimal("1.1");
 System.out.println(c.divide(d, BigDecimal.ROUND_UNNECESSARY)); // 1.10 scale与c相同
 ```
->>>>>>> eba180fc77513fa9b1dd0cc9520be016fcd28045
 
