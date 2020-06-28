@@ -175,7 +175,7 @@ $(document).ready(function() {
 		} else {
 			$('#leftDiv').hide();
 			$('#rightDiv').removeClass('col-md-9').addClass('col-md-12');
-			$('#blog-content').height('10000px');
+			// $('#blog-content').height('10000px');
 			// $('div.container-fluid').removeClass('container-fluid').addClass('container');
 			$('#rightDiv').css("border-left-width", "0");
 			zenOn = true;
