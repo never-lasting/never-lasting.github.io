@@ -87,7 +87,7 @@ public class RepeatableAnnotationTest {
         Class<RepeatableAnnotationTest> clazz = RepeatableAnnotationTest.class;
         if(clazz.isAnnotationPresent(Roles.class)) {
             Roles schedulesAnno = clazz.getDeclaredAnnotation(Roles.class);
-            Role[] values = schedulesAnno.values();
+            Role[] values = schedulesAnno.value();
             for (Role role : values) {
                 System.out.println(role.value());
             }
