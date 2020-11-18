@@ -23,7 +23,7 @@ function onBlogLoad() {
 		var iframeDoc = iframeWindow.document;
 		iframeDoc.querySelector('section.page-header').remove();
 		var mainContent = iframeDoc.querySelector('.main-content');
-		mainContent.style.max-width = "100%;"
+		mainContent.style.max-width = "100%"
 		mainContent.style.margin = "0";
 		
 		var selectedNode = zTreeObj.getNodesByFilter(function(node){
