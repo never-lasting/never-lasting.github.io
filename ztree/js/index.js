@@ -121,7 +121,7 @@ $(document).ready(function() {
 		} else {
 			$($nodes[i]).css({
 				"font-size": "22px",
-				"font-weight": "580"
+				"font-weight": "400"
 			});
 		}
 	}

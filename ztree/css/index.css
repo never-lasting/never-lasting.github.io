@@ -1,5 +1,13 @@
 /**************** ztree css ********************************/
 
+body {
+	font-style: normal;
+}
+
+.ztree li ul {
+	padding-left: 15px;
+}
+
 /* 选中特效 */
 .ztree li a.curSelectedNode {
     padding-top: 0px;
@@ -11,7 +19,7 @@
 	text-decoration:underline;
 }
 .ztree li a.leaf {
-	font-size: 18px;
+	font-size: 15px;
 	color: #155799;
 }
 .ztree li a.curSelectedNode.leaf {
@@ -28,14 +36,15 @@
 
 /**** hover begin ****/
 .ztree li a:hover {
-    text-decoration: underline;
-    /* text-decoration-line: none; */
+    text-decoration-line: none;
     text-decoration-style: initial;
     text-decoration-color: initial;
+	background-color: #5BC0DE;
 }
 /**** hover end ****/
 .ztree li a.node {
-	margin: 4px;
+	margin: 2px;
+	padding: 2px;
 }
 
 .ztree li a.level0 {
