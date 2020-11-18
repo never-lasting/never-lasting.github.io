@@ -22,7 +22,9 @@ function onBlogLoad() {
 	try{
 		var iframeDoc = iframeWindow.document;
 		iframeDoc.querySelector('section.page-header').remove();
-		iframeDoc.querySelector('.main-content').style("max-width: 100%;margin: 0;")
+		var mainContent = iframeDoc.querySelector('.main-content');
+		mainContent.style.max-width = "100%;"
+		mainContent.style.margin = "0";
 		
 		var selectedNode = zTreeObj.getNodesByFilter(function(node){
 			if (node.blogUrl) {
