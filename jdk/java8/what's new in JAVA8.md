@@ -17,7 +17,7 @@
 
 ```java
 public interface IService {
-	void sayHello(String message);
+    void sayHello(String message);
     default void eat() {
         System.out.println("eat");
     }
@@ -29,7 +29,7 @@ public interface IService {
 
 其他类如果实现`IService`直接继承default方法, 但是接口中的static方法只能通过定义他的接口来调用
 
-如果一个类继承了其他类, 而且又实现了多个增强的接口, 要注意一下情况
+如果一个类继承了其他类, 而且又实现了多个增强的接口, 要注意以下情况
 
 1. ```java
    // 父类和接口有相同方法签名的时候, 优先继承父类方法
@@ -108,7 +108,7 @@ public class RepeatableAnnotationTest {
 }
 ```
 
-JAVA8实现起来相当简单
+JAVA8使用Repeatable相对优雅
 
 ```java
 /**
@@ -130,20 +130,20 @@ public @interface Repeatable {
 public class RepeatableAnnotationTest {
     public static void main(String[] args) {
         Class<RepeatableAnnotationTest> clazz = RepeatableAnnotationTest.class;
-        if(clazz.isAnnotationPresent(Roles.class)) {
-            Roles schedulesAnno = clazz.getDeclaredAnnotation(Roles.class);
-            Role[] values = schedulesAnno.value();
-            for (Role role : values) {
-                System.out.println(role.value());
-            }
+        // 1.8新方法
+        Role[] values = clazz.getAnnotationsByType(Role.class);
+        for (Role role : values) {
+            System.out.println(role.value());
         }
     }
 }
+
 @Target(ElementType.TYPE)
 @Retention(RetentionPolicy.RUNTIME)
 @interface Roles {
     Role[] value() default {};
 }
+
 // 只需加上Repeatable元注解
 @Repeatable(Roles.class)
 @Target(ElementType.TYPE)
@@ -152,6 +152,14 @@ public class RepeatableAnnotationTest {
     String value();
 }
 ```
+
+***Tips***
+
+> 为了JDK向上兼容的考虑, 使用`可重复注解`也需要定义一个`容器注解`. 当一个可重复注解在一个地方多次使用时, 编译器会自动将之转换成容器注解.
+>
+> 也就是说@Role("ADMIN") @Role("CEO") 编译后还是@Roles({@Role("ADMIN"), @Role("CEO")}), 但只使用一个@Role("xxx")时不会自动转换,
+>
+> 所以在使用isAnnotationPresent() 以及getAnnotation()反射api时要小心. 推荐尽可能使用1.8新增的方法getAnnotationsByType()
 
 
 
