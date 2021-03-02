@@ -75,21 +75,23 @@ com.johnny.spi.service.impl.StandardService
 重要方法
 
 ```java
-	public static <S> ServiceLoader<S> load(Class<S> service) {
+    public static <S> ServiceLoader<S> load(Class<S> service) {
+        // 什么是context ClassLoader?
         ClassLoader cl = Thread.currentThread().getContextClassLoader();
         return ServiceLoader.load(service, cl);
     }
-    public static <S> ServiceLoader<S> load(Class<S> service,
-                                            ClassLoader loader)
-    {
+    
+    public static <S> ServiceLoader<S> load(Class<S> service, ClassLoader loader) {
         return new ServiceLoader<>(service, loader);
     }
+    
     private ServiceLoader(Class<S> svc, ClassLoader cl) {
         service = Objects.requireNonNull(svc, "Service interface cannot be null");
         loader = (cl == null) ? ClassLoader.getSystemClassLoader() : cl;
         acc = (System.getSecurityManager() != null) ? AccessController.getContext() : null;
         reload();
     }
+    
     public void reload() {
         providers.clear();
         lookupIterator = new LazyIterator(service, loader);

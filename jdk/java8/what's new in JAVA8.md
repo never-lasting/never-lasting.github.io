@@ -13,7 +13,7 @@
 
 ## <a name="Default Methods">Default  Methods 接口增强</a>
 
-> JAVA8允许接口中有default 和 static 默认实现
+> JAVA8允许接口中有和 static 默认实现
 
 ```java
 public interface IService {
