@@ -140,25 +140,52 @@ $(document).ready(function() {
 			zTreeObj.showNodes(zTreeObj.getNodesByParam('isHidden', true));
 			return;
 		}
-		var notMatchNodes = zTreeObj.getNodesByFilter(notMatchFilter);
-		zTreeObj.showNodes(zTreeObj.getNodesByParam('isHidden', true));
-		zTreeObj.hideNodes(notMatchNodes);
+		var matchNodes = zTreeObj.getNodesByFilter(matchFilter);
+		zTreeObj.hideNodes(zTreeObj.getNodesByParam('isHidden', false));
+		zTreeObj.showNodes(matchNodes);
 	}
-
-	function notMatchFilter(node) {
-		var searchContent = $('#searchContent').val();
-		// var tag = $('#tagSelect').val();
+	
+	function match(node, searchContent) {
+		return node.name.toUpperCase().indexOf(searchContent.toUpperCase()) > -1;
+	}
+	
+	function childrenMatch(node, searchContent) {
+		if (match(node, searchContent)) {
+			return true;
+		}
 		var children = node.children;
 		if (children) {
 			for (var i = 0; i < children.length; i++) {
-				var notMatch = notMatchFilter(children[i]);
-				if (!notMatch) {
-					return false;
+				var isMatch = childrenMatch(children[i], searchContent);
+				if (isMatch) {
+					return true;
 				}
 			}
+		}
+		return false;
+	}
+	
+	function parentMatch(node, searchContent) {
+		if (match(node, searchContent)) {
 			return true;
 		}
-		return node.name.toUpperCase().indexOf(searchContent.toUpperCase()) == -1;
+		var parentNode = node.getParentNode();
+		if(parentNode){
+			var isMatch = parentMatch(parentNode, searchContent);
+			if(isMatch) {
+				return true;
+			}
+		}
+		return false;
+	}
+
+	function matchFilter(node) {
+		var searchContent = $('#searchContent').val();
+		var isChildrenMatch = childrenMatch(node, searchContent);
+		if(isChildrenMatch) {
+			return true;
+		}
+		return parentMatch(node, searchContent);
 	}
 
 	var zenOn = false;
