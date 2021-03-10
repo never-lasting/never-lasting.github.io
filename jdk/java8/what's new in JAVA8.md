@@ -6,14 +6,13 @@
 
 - <a href="#Default Methods">Default  Methods 接口增强</a>
 - <a href="#Repeating Annotations">Repeating Annotations可重复注解</a>
-- <a href="#Lambda Expression">Lambda Expression</a>
-- <a href="#Stream API">Stream API</a>
-
-
+- [Lambda Expression](./Lambda Expression)
+- [Stream API](./Stream API)
+- [Date-Time API](./Date-Time API)
 
 ## <a name="Default Methods">Default  Methods 接口增强</a>
 
-> JAVA8允许接口中有和 static 默认实现
+> JAVA8允许接口中有default 和 static 默认实现
 
 ```java
 public interface IService {
@@ -138,6 +137,7 @@ public class RepeatableAnnotationTest {
     }
 }
 
+// 依然需要容器注解
 @Target(ElementType.TYPE)
 @Retention(RetentionPolicy.RUNTIME)
 @interface Roles {
@@ -161,12 +161,40 @@ public class RepeatableAnnotationTest {
 >
 > 所以在使用isAnnotationPresent() 以及getAnnotation()反射api时要小心. 推荐尽可能使用1.8新增的方法getAnnotationsByType()
 
+***best practise***
 
+`jsr303`各种约束注解对Repeatable Annotation的支持 不同的group可以定义不同的约束
 
-## <a name="Lambda Expression">Lambda Expression</a>
+```java
+@Target({ METHOD, FIELD, ANNOTATION_TYPE, CONSTRUCTOR, PARAMETER, TYPE_USE })
+@Retention(RUNTIME)
+@Repeatable(List.class)
+@Documented
+@Constraint(validatedBy = { })
+public @interface Max {
 
-Lambda表达式是JAVA8最重要的语法特性 , 直接单独开一篇[Lambda Expression](./Lambda Expression)
+	String message() default "{javax.validation.constraints.Max.message}";
 
-## <a name="Stream API">Stream API</a>
+	Class<?>[] groups() default { };
 
-Stream API是JAVA8最重要的语法特性 , 直接单独开一篇[Stream API](./Stream API)
+	Class<? extends Payload>[] payload() default { };
+
+	/**
+	 * @return value the element must be lower or equal to
+	 */
+	long value();
+
+	/**
+	 * Defines several {@link Max} annotations on the same element.
+	 *
+	 * @see Max
+	 */
+	@Target({ METHOD, FIELD, ANNOTATION_TYPE, CONSTRUCTOR, PARAMETER, TYPE_USE })
+	@Retention(RUNTIME)
+	@Documented
+	@interface List {
+
+		Max[] value();
+	}
+}
+```

@@ -2,7 +2,7 @@
 
 [Oracle官方文档]( https://docs.oracle.com/javase/tutorial/java/javaOO/lambdaexpressions.html )
 
-> JAVA语言在JAVA8之前一直被人诟病不支持***函数式编程***, 无法将方法当作参数传给另一个方法使用, 匿名内部类的使用看起来很不优雅. JAVA8新特性Lambda Expression解决了上述问题, **他支持将功能视为方法参数, 将代码视为数据**.
+> JAVA语言在JAVA8之前一直被人诟病不支持***函数式编程***, 无法将方法当作参数传给另一个方法使用, 匿名内部类的使用看起来也很不优雅. JAVA8新特性Lambda Expression解决了上述问题, **他支持将功能视为方法参数, 将代码视为数据**. Lambda Expression可以更加简洁的表示一个functional interface的实例
 
 ## Functional Interface
 
@@ -65,8 +65,7 @@ public void testLambda() {
 
 上面是一个简单的Lambda表示Predicate的一个实例, Lambda表达式语法 (...) -> {...}
 
-- lambda语法相当于
-- 一个方法的实现,  (...)里面是方法的参数, 如果只有一个参数 ()可省略
+- lambda语法相当于一个方法的实现,  (...)里面是方法的参数, 如果只有一个参数 ()可省略
 - {...}是方法的具体实现, 如果只有一行语句, 可省略{} 和 return
 
 ### 类型检查 & 类型推断

@@ -14,7 +14,8 @@ var nodes =
 		{name:"java8", children:[
 			{name:"what's new in JAVA8", blogUrl:basePath + "jdk/java8/what's new in JAVA8", tages:["JAVA8"]},
 			{name:"Lambda Expression", blogUrl:basePath + "jdk/java8/Lambda Expression", tages:["JAVA8", "Lambda"]},
-			{name:"Stream API", blogUrl:basePath + "jdk/java8/Stream API", tags:["JAVA8, Stream API"]}
+			{name:"Stream API", blogUrl:basePath + "jdk/java8/Stream API", tags:["JAVA8, Stream API"]},
+			{name:"Date-Time API", blogUrl:basePath + "jdk/java8/Date-Time API", tags:["JAVA8, Date-Time API"]}
 		]},
 		{name:"jdbc", children:[
 			{name:"why Class.forName(…)", blogUrl:basePath + "jdk/jdbc/why Class.forName", tags:["jdbc"]}
